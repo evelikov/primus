@@ -1,0 +1,27 @@
+.TH PRIMUSRUN "1" "December 2020" "primusrun"
+.SH NAME
+primusrun \- run an application on a discrete NVIDIA video card
+.SH SYNOPSIS
+\fBprimusrun\fR \fIcommand \fR
+.SH DESCRIPTION
+Since version 1.0 primusrun is a compatibility wrapper utilising GLVND.
+.sp
+It requires an NVIDIA driver v435.17 alongside Xorg version v1.20.6 or later.
+.SH EXAMPLES
+.TP
+\fBprimusrun glxgears \-info\fR
+Runs the graphics demo supplied by mesa-utils to confirm whether the
+discrete card is being used for GL rendering.
+.SH NOTES
+The project originally used to implements low-overhead local-only client-side
+OpenGL offloading via GLX forking.
+.sp
+This is no longer required and superseded by GLVND.
+.SH ISSUES
+Any issues should be reported to the NVIDIA team as well as GLVND developers
+https://gitlab.freedesktop.org/glvnd/libglvnd/-/issues
+.SH AUTHOR
+Primus was originally created by Alexander Monakov <amonakov@gmail.com>.
+.PP
+This manual page was written by Vincent Cheng <Vincentc1208@gmail.com>,
+for the Debian project (and may be used by others).

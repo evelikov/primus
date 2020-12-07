@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if (( $# > 0 )); then
+	case "$1" in
+		--version | --ver | -v)
+			echo "Primusrun (v 1.0.0)"
+			shift
+	esac
+fi
+
+# Set a couple of environment variables, as per the Nvidia documentation
+# http://download.nvidia.com/XFree86/Linux-x86_64/435.17/README/primerenderoffload.html
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
+exec "$@"
